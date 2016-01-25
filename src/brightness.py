@@ -6,4 +6,4 @@ def brightness_inc(b = 10):
     os.system("xbacklight +" + str(b) +"%")
 
 def brightness_dec(b = 10):
-    os.system("xbacklight +" + str(b) +"%")
+    os.system("xbacklight -" + str(b) +"%")
