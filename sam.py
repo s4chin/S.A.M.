@@ -1,12 +1,13 @@
 #!/usr/bin/env python
-import sys, time, os
+import sys, time
 
 from src.daemon import Daemon
+from src.tts import say
 
 class MyDaemon(Daemon):
     def run(self):
         while True:
-            os.system("espeak  -s 155 -a 200 'Sally sells seashells by the seashore.'")
+            say("How can a clam cram in a clean cream can?")
 
 
 if __name__ == "__main__":
