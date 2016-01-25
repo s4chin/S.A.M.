@@ -7,3 +7,4 @@
 - Word search
 - Translation
 - WiFi control
+- Open apps
