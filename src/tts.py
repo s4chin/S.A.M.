@@ -1,4 +1,4 @@
-import os
+import subprocess
 
 def say(text):
-    return os.system("espeak  -s 155 -a 200 '"+text+"'")
+    return subprocess.call("espeak -s 155 -a 200 '"+text+"'", shell=True)
