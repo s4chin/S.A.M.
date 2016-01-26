@@ -1,5 +1,5 @@
-- Brightness control
-- Volume control
+- ~~Brightness control~~
+- ~~Volume control~~
 - Checking weather
 - Smalltalk
 - Basic math
