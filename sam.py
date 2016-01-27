@@ -1,13 +1,12 @@
 #!/usr/bin/env python
-import sys, time
+import sys
 
 from src.daemon import Daemon
-from src.tts import say
+from src.stt import gstt
 
 class MyDaemon(Daemon):
     def run(self):
-        while True:
-            say("How can a clam cram in a clean cream can?")
+        gstt()
 
 
 if __name__ == "__main__":
