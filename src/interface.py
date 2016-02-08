@@ -16,7 +16,7 @@ except ImportError:
 import time
 
 CLIENT_ACCESS_TOKEN = '2c15be66aea04971996b82207f616d94'
-SUBSCRIPTION_KEY = '908cf30d-603b-4669-b06b-8114b7c9c2e2' 
+SUBSCRIPTION_KEY = '908cf30d-603b-4669-b06b-8114b7c9c2e2'
 
 def interface(query):
     ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN, SUBSCRIPTION_KEY)
@@ -32,26 +32,26 @@ def interface(query):
     task = data['result']
 
     if task["action"] == 'device.increase':
-	if task["parameters"]["module"] == "volume":
-	    volume.volume_increase()
-    	elif task["parameters"]["module"] == "brightness":
-	    brightness.brightness_increase()
+        if task["parameters"]["module"] == "volume":
+            volume.volume_up()
+        elif task["parameters"]["module"] == "brightness":
+            brightness.brightness_up()
     elif task["action"] == "device.decrease":
-	if task["parameters"]["module"] == "volume":
-	    volume.volume_decrease()
-    	elif task["parameters"]["module"] == "brightness":
-	    brightness.brightness_decrease()
+        if task["parameters"]["module"] == "volume":
+            volume.volume_down()
+        elif task["parameters"]["module"] == "brightness":
+            brightness.brightness_down()
     elif task["action"] == "device.switch_on":
         if task["parameters"]["module"] == "wifi":
-	    wifi.wifi_on()
+            wifi.wifi_on()
     elif task["action"] == "switch_off":
-	if task["parameters"]["module"] == "wifi":
-	    wifi.wifi_off()
+        if task["parameters"]["module"] == "wifi":
+            wifi.wifi_off()
     elif task['metadata']['speech'] != "":
-	print task['metadata']['speech']
-	tts.say(task['metadata']['speech'])
-    else :
-	print "sorry..."
+        # print task['metadata']['speech']
+        tts.say(task['metadata']['speech'])
+    else:
+        tts.say("sorry...")
 
 if __name__ == '__main__':
     interface()
