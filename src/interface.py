@@ -33,14 +33,14 @@ def interface(query):
 
     if task["action"] == 'device.increase':
         if task["parameters"]["module"] == "volume":
-            volume.volume_up()
+            volume.volume_up(task["parameters"]["number"])
         elif task["parameters"]["module"] == "brightness":
-            brightness.brightness_up()
+            brightness.brightness_up(task["parameters"]["number"])
     elif task["action"] == "device.decrease":
         if task["parameters"]["module"] == "volume":
-            volume.volume_down()
+            volume.volume_down(task["parameters"]["number"])
         elif task["parameters"]["module"] == "brightness":
-            brightness.brightness_down()
+            brightness.brightness_down(task["parameters"]["number"])
     elif task["action"] == "device.switch_on":
         if task["parameters"]["module"] == "wifi":
             wifi.wifi_on()
