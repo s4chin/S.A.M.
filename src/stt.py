@@ -23,7 +23,7 @@ def gstt():
                 # recognize speech using Google Speech Recognition
                 value = r.recognize_google(audio)
                 if isAwake: # If SAM is supposed to respond
-                    if findWholeWord('bye bye')(value) and findWholeWord('sam')(value):
+                    if findWholeWord('see you later')(value):
                         # If user says Bye bye Sam to close down sam
                         say("Bye sir.")
                         isAwake = False
