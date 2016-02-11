@@ -1,6 +1,7 @@
 import webbrowser
 
 # https://docs.python.org/2/library/webbrowser.html
+# http://askubuntu.com/a/618490
 
 def open_site(sitename):
     webbrowser.open("http://" + sitename + ".com")

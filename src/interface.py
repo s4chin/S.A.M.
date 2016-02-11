@@ -49,6 +49,8 @@ def interface(query):
             wifi.wifi_off()
     elif task["action"] == "browse.open":
         browser_open.open_site(task["parameters"]["website"])
+    elif task["action"] == "web.search":
+        browser_open.web_search((task["parameters"]["service_name"]).lower(), task["parameters"]["q"])
     elif task['metadata']['speech'] != "":
         # print task['metadata']['speech']
         tts.say(task['metadata']['speech'])
