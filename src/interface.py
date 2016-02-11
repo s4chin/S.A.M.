@@ -47,6 +47,8 @@ def interface(query):
     elif task["action"] == "switch_off":
         if task["parameters"]["module"] == "wifi":
             wifi.wifi_off()
+    elif task["action"] == "browse.open":
+        browser_open.open_site(task["parameters"]["website"])
     elif task['metadata']['speech'] != "":
         # print task['metadata']['speech']
         tts.say(task['metadata']['speech'])
