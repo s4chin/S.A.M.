@@ -6,6 +6,7 @@ from src import open_app
 from src import tts
 from src import volume
 from src import wifi
+from src import wolfram
 
 try:
     import apiai
@@ -55,7 +56,7 @@ def interface(query):
         # print task['metadata']['speech']
         tts.say(task['metadata']['speech'])
     else:
-        tts.say("sorry...")
+        wolfram.wolfram(query)
 
 if __name__ == '__main__':
     interface()

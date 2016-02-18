@@ -1,1 +1,3 @@
+apiai
+wolframalpha
 xbacklight
