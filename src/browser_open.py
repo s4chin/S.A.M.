@@ -10,5 +10,7 @@ def open_site(sitename):
 def web_search(sitename, query):
     if sitename == "wikipedia":
         webbrowser.open("https://en.wikipedia.org/wiki/Special:Search/{}".format(query))
+    elif sitename == "youtube":
+        webbrowser.open("https://www.youtube.com/results?search_query={}".format(query))
     else:
         webbrowser.open("https://" + sitename + ".com/search?q={}".format(query))
