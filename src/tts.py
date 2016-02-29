@@ -1,4 +1,6 @@
-import subprocess
+import pyttsx
 
 def say(text):
-    return subprocess.call("espeak -s 155 -a 200 '"+text+"'", shell=True)
+    engine = pyttsx.init()
+    engine.say(text)
+    engine.runAndWait()

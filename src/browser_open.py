@@ -4,7 +4,8 @@ import webbrowser
 # http://askubuntu.com/a/618490
 
 def open_site(sitename):
-    webbrowser.open("http://" + sitename + ".com")
+    url = "http://" + sitename + ".com"
+    webbrowser.open(url)
 
 def web_search(sitename, query):
     if sitename == "wikipedia":
