@@ -1,3 +1,2 @@
-apiai
-wolframalpha
 xbacklight
+espeak
