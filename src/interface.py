@@ -1,5 +1,6 @@
 import os.path, sys
 import json
+from ConfigParser import SafeConfigParser
 from src import brightness
 from src import browser_open
 from src import open_app
@@ -16,8 +17,11 @@ except ImportError:
 
 import time
 
-CLIENT_ACCESS_TOKEN = '2c15be66aea04971996b82207f616d94'
-SUBSCRIPTION_KEY = '908cf30d-603b-4669-b06b-8114b7c9c2e2'
+parser = SafeConfigParser()
+parser.read('../config.ini')
+
+CLIENT_ACCESS_TOKEN = parser.get('api-ai', 'token')
+SUBSCRIPTION_KEY = parser.get('api-ai', 'key')
 
 def interface(query):
     ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN, SUBSCRIPTION_KEY)
@@ -55,7 +59,6 @@ def interface(query):
     elif task["action"] == "media.video_search":
         browser_open.web_search((task["parameters"]["service_name"]).lower(), task["parameters"]["q"])
     elif task['metadata']['speech'] != "":
-        # print task['metadata']['speech']
         tts.say(task['metadata']['speech'])
     else:
         wolfram.wolfram(query)

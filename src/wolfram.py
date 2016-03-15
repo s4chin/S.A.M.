@@ -1,6 +1,11 @@
 import wolframalpha
 import tts
-client = wolframalpha.Client('XWPJXW-4GV3RL493T')
+from ConfigParser import SafeConfigParser
+
+parser = SafeConfigParser()
+parser.read('../config.ini')
+
+client = wolframalpha.Client(parser.get('wolframalpha', 'key'))
 
 def wolfram(query):
     res = client.query(query)
